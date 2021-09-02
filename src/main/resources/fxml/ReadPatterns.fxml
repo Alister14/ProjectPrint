@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.controllers.ReadPatternsController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oto lista wzorów" />
+      <GridPane alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwa wzoru" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jaki język" GridPane.columnIndex="2" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tematyka" GridPane.columnIndex="3" />
+            <ComboBox fx:id="languageComboBox" onAction="#languageComboBoxAction" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <ComboBox fx:id="typeComboBox" onAction="#typeComboBoxAction" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="namePatternsTextField" onKeyTyped="#filter" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin>
+            </TextField>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jaki kolor" GridPane.columnIndex="1" />
+            <ComboBox fx:id="colorComboBox" onAction="#colorComboBoxAction" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </GridPane>
+      <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="900.0" spacing="20.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="300.0">
+               <children>
+                  <ListView fx:id="patternsListView" onKeyPressed="#patternListViewActionKey" onMouseClicked="#patternListViewAction" prefHeight="400.0" prefWidth="300.0" />
+                  <Button mnemonicParsing="false" text="Zatwierdz  wybor" />
+               </children>
+            </VBox>
+            <VBox fx:id="patternNameTextField" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="500.0">
+               <children>
+                  <Text fx:id="namePatternText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <ImageView fx:id="patternImageView" fitHeight="150.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" />
+                  <TableView fx:id="patternsTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="500.0">
+                     <columns>
+                        <TableColumn fx:id="numberScreenTableColumn" prefWidth="75.0" text="Numer sita" />
+                        <TableColumn fx:id="signTableColumn" prefWidth="75.0" text="znak" />
+                        <TableColumn fx:id="ordersTableColumn" prefWidth="75.0" text="kolejność" />
+                        <TableColumn fx:id="colorTableColumn" prefWidth="75.0" text="kolor sita" />
+                        <TableColumn fx:id="availabityTableColumn" prefWidth="105.5999755859375" text="Czy dostępne" />
+                        <TableColumn fx:id="densityTableColumn" prefWidth="111.20001220703125" text="rodzaj siatki" />
+                     </columns>
+                  </TableView>
+                  <Text fx:id="descriptionText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text fx:id="placeText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

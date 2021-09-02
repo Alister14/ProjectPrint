@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.controllers.AddOrDeleteClientOrMarkController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dodawanie  lub usuwanie klienta" textAlignment="CENTER">
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin></Text>
+      <HBox spacing="20.0">
+         <children>
+            <Label text="Nazwa klienta" />
+            <TextField fx:id="clientAddTextField" />
+            <Button fx:id="clientAddButton" mnemonicParsing="false" onAction="#clientAddButtonAction" text="dodaj" />
+            <ComboBox fx:id="clientAddComboBox" onAction="#onActionComboBox" prefWidth="150.0" />
+            <Button fx:id="clientDeleteButton" mnemonicParsing="false" onAction="#clientDeleteButtonAction" text="usuń" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <Text layoutX="204.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodawanie  lub usuwanie marki" textAlignment="CENTER" />
+      <HBox layoutX="10.0" layoutY="47.0" spacing="20.0">
+         <children>
+            <Label text="Nazwa marki" />
+            <TextField fx:id="markAddTextField" />
+            <Button fx:id="markAddButton" mnemonicParsing="false" onAction="#markAddButtonAction" text="dodaj" />
+            <ComboBox fx:id="markAddComboBox" onAction="#markonActionComboBox" prefWidth="150.0" />
+            <Button fx:id="markDeleteButton" mnemonicParsing="false" onAction="#markDeleteButtonAction" text="usuń" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </children>
+   <opaqueInsets>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </opaqueInsets>
+</VBox>

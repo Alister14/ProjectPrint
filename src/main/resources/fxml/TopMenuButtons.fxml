@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1000.0" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.controllers.TopMenuButtonsController">
+   <children>
+      <ToggleButton alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#addOrDeleteClient" prefHeight="60.0" prefWidth="268.0" text="Dodawanie/usuwanie klienta lub marki">
+         <toggleGroup>
+            <ToggleGroup fx:id="toggleButons" />
+         </toggleGroup>
+      </ToggleButton>
+      <ToggleButton alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="Dodanie nowego zamówienia" toggleGroup="$toggleButons" />
+      <ToggleButton alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="Dodanie nowego wzoru" toggleGroup="$toggleButons" />
+      <ToggleButton alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="Lista zamówień" toggleGroup="$toggleButons">
+      </ToggleButton>
+      <ToggleButton alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#readPattern" prefHeight="60.0" prefWidth="200.0" text="Lista wzorów" toggleGroup="$toggleButons">
+      </ToggleButton>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</HBox>
